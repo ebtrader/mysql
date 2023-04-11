@@ -1,6 +1,7 @@
 import os
 from sqlalchemy import create_engine
 from sqlalchemy import text
+import pandas as pd
 
 # https://planetscale.com/blog/using-mysql-with-sql-alchemy-hands-on-examples
 
@@ -26,6 +27,13 @@ with open(pwd_file) as i:
 connection_string = 'mysql+mysqlconnector://' + username + ':' + pwd + '@' + hostname + '/' + dbname
 engine = create_engine(connection_string)
 
-with engine.connect() as connection:
-  connection.execute(text("CREATE TABLE sample (name VARCHAR(50), address VARCHAR(50))"))
+# with engine.connect() as connection:
+#   connection.execute(text("CREATE TABLE sample (name VARCHAR(50), address VARCHAR(50))"))
 
+df = pd.read_csv('address_book.csv')
+print(df)
+
+# conn = engine.connect()
+# df.to_sql('address_table', con=engine) # creates table from df
+
+df.to_sql('address_table', con=engine, if_exists='append') # appends table
