@@ -37,3 +37,4 @@ print(df)
 # df.to_sql('address_table', con=engine) # creates table from df
 
 df.to_sql('address_table', con=engine, if_exists='append') # appends table
+
