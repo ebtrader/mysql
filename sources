@@ -1,0 +1,6 @@
+https://www.dataquest.io/blog/sql-insert-tutorial/
+
+from sqlalchemy import create_engine
+
+https://planetscale.com/blog/using-mysql-with-sql-alchemy-hands-on-examples
+
