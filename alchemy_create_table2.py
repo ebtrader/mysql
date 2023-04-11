@@ -27,5 +27,5 @@ connection_string = 'mysql+mysqlconnector://' + username + ':' + pwd + '@' + hos
 engine = create_engine(connection_string)
 
 with engine.connect() as connection:
-  connection.execute(text("CREATE TABLE mammals (id INTEGER, name VARCHAR(20))"))
+  connection.execute(text("CREATE TABLE dinosaurs (id INTEGER, name VARCHAR(20))"))
 
